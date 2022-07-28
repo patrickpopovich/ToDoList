@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Crear Nueva Lista
+{% endblock %}
+
+
+{% block content %}
+Create Page
+<form method="POST" action="/create/">
+    {{ form.as_p }}
+    <button type="submit", name="save">Crear</button>
+
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title%} Ver Lista {{ ls.name }} {%endblock%}
+
+{% block content %}
+
+    <h1>{{ ls.name }}</h1>
+    <ul>
+        <h3>Pendiente:</h3>
+
+        {% for item in ls.item_set.all %}
+            {% if item.complete == False %}
+            
+            <li>{{ item.text }}</li>
+            {% endif %}
+        {% endfor %}
+
+        <h3>Completado:</h3>
+
+        {% for item in ls.item_set.all %}
+            {% if item.complete == True %}
+            
+            <li>{{ item.text }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>   
+{%endblock%}
+
+
